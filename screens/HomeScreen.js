@@ -15,9 +15,10 @@ const HomeScreen = () => {
           backgroundColor:"white",
           resizeMode:"contain",
         }}
-          source={{            
-            uri: "http://pngimg.com/uploads/uber/uber_PNG16.png",
-          }}
+          // source={{            
+          //   uri: "http://pngimg.com/uploads/uber/uber_PNG16.png",
+          // }}
+          source={require('../assets/uber_PNG16.png')}
         />
         <NavOptions />
       </View>
