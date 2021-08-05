@@ -1,11 +1,38 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { FlatList, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native'
+
+const data =[ 
+  {
+    id :"123",
+    title: "Get a ride",
+    image :"",
+    screen :"MapScreen",
+  },
+  {
+    id:"456",
+    title:"Order food",
+    image:"",
+    screen :"EatsScreen"
+  }
+]
+
 
 const NavOptions = () => {
   return (
-    <View>
-      <Text>hello world</Text>
-    </View>
+    <FlatList data={data}
+    // horizontal
+    keyExtractor={(item)=> item.id}
+    renderItem={({item}) => ( 
+      <TouchableOpacity>
+        <View>
+          <Image
+          style={{width:120, height:120, resizeMode:"contain"}}
+          source={{uri:item.image}}
+          />
+        </View>
+      </TouchableOpacity>
+    )}
+    />
   )
 }
 
